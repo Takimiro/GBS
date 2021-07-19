@@ -1,0 +1,67 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.App {
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--primary-font);
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+:root{
+  --primary-bg: #919192;
+  --primary-font: #272727;
+  --secondary-bg: #212529;
+  --secondary-font: #c3c5d4;
+  --default-shadow: 5px 5px 4px rgba(0, 0, 0, 0.15);
+}
+
+#root{    
+    overflow-y: hidden;
+}
+
+body,html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    min-height:100%;
+}
+* {
+    box-sizing: border-box;
+}
+/* Scroll settings */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #272727;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  
+  

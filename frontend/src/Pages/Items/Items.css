@@ -1,0 +1,93 @@
+.items{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-self: center;
+
+    align-content: center;
+    justify-content: center;
+}
+
+
+.search-container{
+    align-content: center;
+    justify-content: center;
+}
+
+.item-search{
+    width: 50%;
+    
+    align-self: center;
+    justify-self: center;
+    align-content: center !important;
+    justify-content: center !important;
+    box-shadow: var(--default-shadow);
+
+    margin-top: 30px;
+}
+
+    .item-search input{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+        color: var(--secondary-font);
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    .item-search input:focus{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+        color: var(--secondary-font);
+        font-weight: 600;
+    }
+
+    .item-search button{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+        color: var(--secondary-font);
+        font-weight: 600;
+
+        border-radius: 0px 8px 8px 0px;
+    }
+
+    .item-search button:hover{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+        color: var(--secondary-font);
+        font-weight: 700;
+    }
+
+    .item-search button:active{
+        background-color: var(--secondary-bg);
+        border-color: var(--secondary-bg);
+        color: var(--secondary-font);
+        font-weight: 500;
+    }
+
+.item-card{
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-bg);
+    margin: 0px 30px 30px 30px;
+
+    box-shadow: var(--default-shadow);
+    justify-items: center;
+    align-items: center;
+
+    border-radius: 8px;
+}
+
+.item-card span{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #c3c5d4;
+}
+
+.item-card img{
+    border-radius: 8px;
+    height: 90px;
+    padding: 0px;
+    margin: 0px;
+}
