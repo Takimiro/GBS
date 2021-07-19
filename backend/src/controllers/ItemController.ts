@@ -72,7 +72,7 @@ export default class ItemController {
 
     const repository = getRepository(Item);
     
-    const item = await repository.query(`SELECT * FROM users where users.name Like '%${text}%'`)
+    const item = await repository.query(`SELECT * FROM items where items.name Like '%${text}%'`)
 
     return response.json(item);
   }
