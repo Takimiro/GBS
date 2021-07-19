@@ -1,26 +1,34 @@
 import { Router } from 'express';
-import ProductController from './controllers/ProductController';
-import StoreController from './controllers/StoreController';
-import auth from './middlewares/auth';
+import ItemController from './controllers/ItemController';
+import StorageController from './controllers/StorageController';
+import UserController from './controllers/UserController';
+
 
 const routes = Router();
 
-const storeController = new StoreController() 
-const productController = new ProductController() 
+const userController = new UserController() 
+const itemController = new ItemController() 
+const storageController = new StorageController() 
 
-routes.get('/users/products', productController.index);
-routes.get('/users/stores', productController.index);
+// users
+routes
+  .post('/users', userController.create)
+  .get('/users/:id', userController.show);
 
 
-routes.post('/admin/stores/register', storeController.create);
-routes.post('/admin/stores/authenticate', storeController.authenticate);
+// storages 
+routes
+  .post('/users/:id/storages', storageController.create)
+  .get('/users/:id/storages', userController.show);
 
-routes.post('/admin/stores/products', productController.create);
-routes.get('/admin/stores/products', productController.index);
 
-routes.use(auth)  
-routes.get('/admin/stores', storeController.index);
-routes.get('/admin/store/products', productController.index);
+
+// items
+routes
+  .post('/users/:userId/storages/:id/items', itemController.create)
+  .get('/users/:userId/storages/:id/items', itemController.index)
+  .get('/users/storages/items', itemController.search);
+
 
 
 export default routes;
