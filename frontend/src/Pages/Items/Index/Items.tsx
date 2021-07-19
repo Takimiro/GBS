@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Items.css";
-import mug from '../../Assets/mug.jpg'
-import search from '../../Assets/search_white_24dp.svg'
+import mug from '../../../Assets/mug.jpg'
+import search from '../../../Assets/search_white_24dp.svg'
+
+import AddItem from "../AddItem/AddItem";
 
 export default function Items() {
   const [items, ] = useState<Array<number>>([1, 2, 3, 4, 5, 6]);
@@ -24,11 +26,14 @@ export default function Items() {
             <ul key={n} className="p-2 item-card">
               <img src={mug} className="App-logo" alt="item_img"/>
               <span>White Mug</span>
+              <small>South Wing Storage</small>
             </ul>
           );
         })}
 
       </li>
+
+      <AddItem></AddItem>
     </div>
   );
 }

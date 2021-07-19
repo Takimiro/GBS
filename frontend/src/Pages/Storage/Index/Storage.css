@@ -1,0 +1,51 @@
+.storage-index{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../../Assets/map.png");
+    height: 100vw;
+
+
+}
+
+.storage-listing{
+    margin-top: 70px;
+    margin-bottom: 70px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.storage-announcement{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: center;
+    padding: 20px;
+    width: 20vw;
+    height: 100px;
+
+    display: flex;
+
+    border-radius: 8px;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-font);
+    box-shadow: var(--default-shadow);
+}
+
+.storage-image-container img{
+    border-radius: 8px;
+    height: 80px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.storage-announcement-info{
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.storage-announcement-info div img{
+    padding-bottom: 2.5px;
+    padding-left: 2.5px;
+}

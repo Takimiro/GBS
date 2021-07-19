@@ -70,6 +70,7 @@
     display: flex;
     flex-direction: column;
     background-color: var(--secondary-bg);
+    color: var(--secondary-font);
     margin: 0px 30px 30px 30px;
 
     box-shadow: var(--default-shadow);
@@ -82,7 +83,11 @@
 .item-card span{
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #c3c5d4;
+    color: var(--secondary-font);
+}
+
+.item-card small{
+    color: var(--secondary-font);
 }
 
 .item-card img{
@@ -91,3 +96,4 @@
     padding: 0px;
     margin: 0px;
 }
+

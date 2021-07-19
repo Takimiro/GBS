@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   margin: 0;
-  height: 100vh;
+  
   background-color: var(--primary-bg);
   color: var(--primary-font);
 }
@@ -20,15 +20,15 @@
 }
 
 :root{
-  --primary-bg: #919192;
+  --primary-bg: #dcdce0;
   --primary-font: #272727;
   --secondary-bg: #212529;
   --secondary-font: #c3c5d4;
   --default-shadow: 5px 5px 4px rgba(0, 0, 0, 0.15);
 }
 
-#root{    
-    overflow-y: hidden;
+:root{
+  background-color: var(--primary-bg);
 }
 
 body,html {
@@ -36,8 +36,8 @@ body,html {
     margin: 0;
     padding: 0;
     overflow: auto;
-    min-height:100%;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -63,5 +63,20 @@ body,html {
     background: #555;
   }
 
-  
-  
+.default-button{
+  outline: none;
+  border-radius: 8px;
+  background-color: var(--secondary-bg);
+  color: var(--secondary-font);
+  box-shadow: var(--default-shadow);
+}
+
+.default-button span{
+  font-weight: 500;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.default-button img{
+  padding-bottom: 2.5px;
+}
