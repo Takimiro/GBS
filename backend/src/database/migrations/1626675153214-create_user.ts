@@ -1,9 +1,9 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class createStore1626581793684 implements MigrationInterface {
+export class createUser1626581793684 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(new Table({
-      name: 'stores',
+      name: 'users',
       columns: [
         {
           name: 'id',
@@ -19,22 +19,11 @@ export class createStore1626581793684 implements MigrationInterface {
           isNullable: false
         },
 
-        {
-          name: 'email',
-          type: 'varchar',
-          isNullable: false
-        },
-
-        {
-          name: 'password',
-          type: 'varchar',
-          isNullable: false
-        },
-
+        
       ]
     }))
   }
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('stores');
+    await queryRunner.dropTable('users');
   }
 }
