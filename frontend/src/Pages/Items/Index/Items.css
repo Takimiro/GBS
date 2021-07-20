@@ -1,4 +1,19 @@
+
+.align-items-center{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+
+    align-content: center;
+    justify-content: center;
+
+    align-items: center;
+    justify-items: center;
+}
+
 .items{
+    max-width: 1400px;
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -16,9 +31,10 @@
     justify-content: center;
 }
 
+
+
 .item-search{
-    width: 50%;
-    
+    border-radius: 8px;
     align-self: center;
     justify-self: center;
     align-content: center !important;

@@ -25,12 +25,11 @@ export default function AddItem() {
         <form>
             <div className="form-group">
                 <label htmlFor="item-name">Name</label>
-                <input type="email" className="form-control" id="item-name" aria-describedby="emailHelp" placeholder="Item Name"/>
+                <input type="email" className="form-control" id="item-name" aria-describedby="itemName" placeholder="Item Name"/>
             </div>
             <div className="form-group">
-                <label htmlFor="image-upload">Image</label>
-                <br></br>
-                <input type="file" className="form-control-file" id="image-upload"></input>
+                <label htmlFor="image-url">Image</label>
+                <input type="text" className="form-control" id="image-url" aria-describedby="imageUrl" placeholder="Image Url"/>
             </div>
             
             <div className="popup-options">

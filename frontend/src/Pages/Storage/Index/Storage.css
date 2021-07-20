@@ -13,16 +13,19 @@
     width: 25vw;
     display: flex;
     flex-direction: column;
-    align-content: center;
-    justify-content: center;
+    align-content: left;
+    justify-content: left;
 }
 
 .storage-announcement{
     margin-top: 10px;
     margin-bottom: 10px;
-    align-self: center;
     padding: 20px;
-    width: 20vw;
+    width: 90%;
+    max-width: 500px;
+
+    margin-left: 5%;
+    margin-right: 5%;
     height: 100px;
 
     display: flex;
@@ -31,6 +34,8 @@
     background-color: var(--secondary-bg);
     color: var(--secondary-font);
     box-shadow: var(--default-shadow);
+
+    overflow: hidden;
 }
 
 .storage-image-container img{
@@ -43,9 +48,22 @@
 .storage-announcement-info{
     text-align: left;
     padding-bottom: 10px;
+    white-space: nowrap;
 }
 
 .storage-announcement-info div img{
     padding-bottom: 2.5px;
     padding-left: 2.5px;
+}
+
+@media (max-width: 1200px) {
+    .storage-listing{
+        width: 50vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .storage-listing{
+        width: 80vw;
+    }
 }

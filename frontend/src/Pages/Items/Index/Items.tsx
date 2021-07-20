@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import "./Items.css";
 import mug from '../../../Assets/mug.jpg'
 import search from '../../../Assets/search_white_24dp.svg'
 
 import AddItem from "../AddItem/AddItem";
+import api from "../../../Server/api"
 
 export default function Items() {
-  const [items, ] = useState<Array<number>>([1, 2, 3, 4, 5, 6]);
+  useEffect(() => getItems())
+  const [items, setItens] = useState<Array<number>>([1, 2, 3, 4, 5, 6]);
+  
+
+  function getItems(){
+    api.get("/user").then(resp => {
+      console.log(resp.data);
+    });
+  }
+
 
   return (
-    <div className=".d-flex w-100">
+    <div className="align-items-center">
       
-      <div className="search-container d-flex w-100">
+      <div className="search-container d-flex">
         <div className="input-group mb-3 item-search">
             <input type="text" className="form-control" placeholder="Item's name" aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
             <div className="input-group-append">
@@ -34,6 +44,6 @@ export default function Items() {
       </li>
 
       <AddItem></AddItem>
-    </div>
+      </div>
   );
 }

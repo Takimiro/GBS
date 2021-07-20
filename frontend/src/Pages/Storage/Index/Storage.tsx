@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Storage.css";
-import AddStorage from "../AddStorage/AddStorage";
+import AddStorage from "../AddStorage/AddStorage";  
 import storage from "../../../Assets/storage.jpg"
 import Star from "../../../Assets/star_white_24dp.svg"
 // import map from "../../../Assets/map.png"
@@ -11,8 +11,8 @@ export default function Storage() {
   return (
       <div className="storage-index">
         <div className="storage-listing">
-          {items.map(() => {
-            return <div className="storage-announcement">
+          {items.map((i) => {
+            return <div key={i} className="storage-announcement">
               <div className="storage-image-container">
                 <img src={storage} alt="storage"></img>
               </div>
@@ -20,8 +20,8 @@ export default function Storage() {
                 <div>South Wing Storage</div>
                 <div>Via L2 Sul, 233</div>
                 <div>Rating:
-                  {items.map(() => {
-                    return <img src={Star} alt={"star"}></img>
+                  {items.map((itens) => {
+                    return <img key={itens} src={Star} alt={"star"}></img>
                   })}
                 </div>
               </div>

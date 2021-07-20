@@ -7,8 +7,8 @@ import Storage from "./Pages/Storage/Index/Storage";
 export default function Routes() {
   return (
     <Router>
-      <div>
-        <div id="main-container">
+      <div className="main-container">
+        <div>
           <Header></Header>
 
           {/* A <Switch> looks through its children <Route>s ands
