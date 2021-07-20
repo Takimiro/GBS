@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Storage } from './Storage';
 import { User } from './User';
 
@@ -26,7 +26,6 @@ class Item {
   @Column()
   url?: string;
 
-  // possivel problema snackcase
   @Column()
   storagesId?: number;
 

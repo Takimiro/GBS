@@ -1,4 +1,4 @@
-import { Request, response, Response } from 'express';
+import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import { User } from '../models/User';
 
@@ -27,31 +27,6 @@ export default class UserController {
       return response.status(400).json(error)
     }
   }
-
-
-
-  // async update(request: Request, response: Response) {
-  //   const { id } = request.params as User;
-  //   const requestedProduct = request.body as User;
-  //   try {
-  //     const repository = getRepository(User);
-  //     await repository.update(id!, requestedProduct);
-  //     return response.send();
-  //   } catch (error) {
-  //     return response.status(400).json(error)
-  //   }
-  // }
-
-  // async delete(request: Request, response: Response) {
-  //   const { id } = request.params as User;
-  //   try {
-  //     const repository = getRepository(User);
-  //     await repository.delete(id!);
-  //     return response.send();
-  //   } catch (error) {
-  //     return response.status(400).json(error)
-  //   }
-  // }
 
   async show(request: Request, response: Response) {
     const { id } = request.params

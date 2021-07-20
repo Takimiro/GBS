@@ -1,6 +1,6 @@
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Item } from "./Item";
-import { Storage } from "./Storage";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Item } from './Item';
+import { Storage } from './Storage';
 
 
 @Entity('users')
