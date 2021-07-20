@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react";
 import "./Items.css";
+
+import Item from "../../../models/Item"
 import mug from '../../../Assets/mug.jpg'
 import search from '../../../Assets/search_white_24dp.svg'
 
@@ -8,12 +10,11 @@ import api from "../../../Server/api"
 
 export default function Items() {
   useEffect(() => getItems())
-  const [items, setItens] = useState<Array<number>>([1, 2, 3, 4, 5, 6]);
-  
+  const [items, setItems] = useState<Array<Item>>([]);
 
   function getItems(){
     api.get("/user").then(resp => {
-      console.log(resp.data);
+      setItems(resp.data)
     });
   }
 
@@ -31,12 +32,12 @@ export default function Items() {
       </div>
 
       <li className=".d-inline-flex items">
-        {items.map(function (n) {
+        {items.map(function (item) {
           return (
-            <ul key={n} className="p-2 item-card">
+            <ul key={item.id} className="p-2 item-card">
               <img src={mug} className="App-logo" alt="item_img"/>
-              <span>White Mug</span>
-              <small>South Wing Storage</small>
+              <span>n</span>
+              <small>{item.description}</small>
             </ul>
           );
         })}

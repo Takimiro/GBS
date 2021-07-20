@@ -3,8 +3,16 @@ import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import "./AddItem.css";
 import add from "../../../Assets/add_circle_outline_white_24dp.svg";
+import api from "../../../Server/api"
 
 export default function AddItem() {
+
+  function addItem(){
+    api.post("/user").then(resp => {
+      console.log(resp.data);
+    });
+  }
+
   return (
     <Popup
       trigger={

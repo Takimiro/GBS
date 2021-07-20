@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home/Index/Home";
 import Items from "./Pages/Items/Index/Items";
-import Storage from "./Pages/Storage/Index/Storage";
+import Storages from "./Pages/Storage/Index/Storages";
 export default function Routes() {
   return (
     <Router>
@@ -19,7 +19,7 @@ export default function Routes() {
               <Home />
             </Route>
             <Route path="/storages">
-              <Storage />
+              <Storages />
             </Route>
 
             <Route path="/items">
