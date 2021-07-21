@@ -32,7 +32,7 @@ export default function Storages() {
           {storages.map((storage) => {
             return <div key={storage.id} className="storage-announcement">
               <div className="storage-image-container">
-                <img src={storage_img} alt="storage"></img>
+                <img src={storage.url?.includes("http")? storage.url : storage_img} alt="storage"></img>
               </div>
               <div className="storage-announcement-info"> 
                 <div>{storage.name}</div>
