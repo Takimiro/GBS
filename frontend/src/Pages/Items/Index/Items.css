@@ -31,8 +31,6 @@
     justify-content: center;
 }
 
-
-
 .item-search{
     border-radius: 8px;
     align-self: center;
@@ -42,6 +40,8 @@
     box-shadow: var(--default-shadow);
 
     margin-top: 30px;
+
+    transition: all 0.25;
 }
 
     .item-search input{
@@ -49,13 +49,14 @@
         border-color: var(--secondary-bg);
         color: var(--secondary-font);
         border-radius: 8px 0px 0px 8px;
+        transition: all 0.25;
     }
 
     .item-search input:focus{
         background-color: var(--secondary-bg);
         border-color: var(--secondary-bg);
         color: var(--secondary-font);
-        font-weight: 600;
+        transition: all 0.25;
     }
 
     .item-search button{

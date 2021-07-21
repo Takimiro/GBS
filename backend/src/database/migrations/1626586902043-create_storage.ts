@@ -19,6 +19,18 @@ export class createStorage1626581793684 implements MigrationInterface {
           isNullable: false
         },
 
+        {
+          name: 'address',
+          type: 'varchar',
+          isNullable: false
+        },
+
+        {
+          name: 'url',
+          type: 'varchar',
+          isNullable: false
+        },
+
 
         {
           name: 'latitude',

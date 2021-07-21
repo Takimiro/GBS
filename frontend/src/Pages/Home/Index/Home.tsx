@@ -3,7 +3,7 @@ import logo from '../../../Assets/logo.svg';
 import './Home.css';
 import api from '../../../Server/api'
 export default function Header() {
-  useEffect(() => createUser())
+  useEffect(() => createUser(), [])
 
   function createUser(){
     api.post("/users", {

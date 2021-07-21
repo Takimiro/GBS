@@ -9,12 +9,25 @@ import AddItem from "../AddItem/AddItem";
 import api from "../../../Server/api"
 
 export default function Items() {
-  useEffect(() => getItems())
+  
+  useEffect(() => getItems(), []);
+
   const [items, setItems] = useState<Array<Item>>([]);
+  const [itemSearch, setItemSearch] = useState<String>('');
 
   function getItems(){
-    api.get("/user").then(resp => {
-      setItems(resp.data)
+    console.log("Entrou")
+    api.get(`/users/1/storages/items/`).then(resp => {
+      console.log(resp)
+      if(itemSearch){
+        setItems(resp.data.filter((item:any) => {
+          return item.name.includes(itemSearch);
+        }))
+      }
+      else{
+        setItems(resp.data);
+      }
+      
     });
   }
 
@@ -24,9 +37,9 @@ export default function Items() {
       
       <div className="search-container d-flex">
         <div className="input-group mb-3 item-search">
-            <input type="text" className="form-control" placeholder="Item's name" aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
+            <input type="text" className="form-control" onChange={e => setItemSearch(e.target.value)} placeholder="Item's name" aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
             <div className="input-group-append">
-              <button className="btn btn-outline-secondary" type="button"><img src={search} alt="search"></img></button>
+              <button className="btn btn-outline-secondary" type="button" onClick={getItems}><img src={search} alt="search"></img></button>
             </div>
         </div>
       </div>
@@ -35,8 +48,8 @@ export default function Items() {
         {items.map(function (item) {
           return (
             <ul key={item.id} className="p-2 item-card">
-              <img src={mug} className="App-logo" alt="item_img"/>
-              <span>n</span>
+              <img src={item.url?.includes("http")? item.url : mug} className="App-logo" alt="item_img"/>
+              <span>{item.name}</span>
               <small>{item.description}</small>
             </ul>
           );
@@ -44,7 +57,7 @@ export default function Items() {
 
       </li>
 
-      <AddItem></AddItem>
+      <AddItem items={items} setItems={setItems}></AddItem>
       </div>
   );
 }

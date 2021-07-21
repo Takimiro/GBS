@@ -10,14 +10,19 @@ import Storage from '../../../models/Storage'
 export default function Storages() {
   useEffect(() => {
     getStorages()
-  })
+  }, [])
 
   const [storages, setStorage] = useState<Array<Storage>>([]);
   const [stars] = useState<Array<number>>([1,2,3]);
 
   function getStorages(){
     api.get("/users/1/storages/").then(resp => {
-      setStorage(resp.data)
+      console.log('storage:')
+      console.log(resp.data.storages);
+      if(resp.data.storages){
+        setStorage(resp.data.storages);
+      }
+      
     });
   }
 
@@ -30,8 +35,8 @@ export default function Storages() {
                 <img src={storage_img} alt="storage"></img>
               </div>
               <div className="storage-announcement-info"> 
-                <div>South Wing Storage</div>
-                <div>Via L2 Sul, 233</div>
+                <div>{storage.name}</div>
+                <div>{storage.address}</div>
                 <div>Rating:
                   {stars.map((star) => {
                     return <img key={star} src={Star} alt={"star"}></img>
@@ -41,7 +46,7 @@ export default function Storages() {
               
             </div>
           })}
-          <AddStorage></AddStorage>
+          <AddStorage storages={storages} setStorage={setStorage}></AddStorage>
         </div>
       </div>
   );

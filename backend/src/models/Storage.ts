@@ -10,6 +10,12 @@ class Storage {
 
   @Column()
   name?: string;
+
+  @Column()
+  address?: string;
+
+  @Column()
+  url?: string;
   
   @Column()
   latitude?: number;
